@@ -37,9 +37,10 @@ String basePath=request.getScheme()+"://"+request.getServerName()+":"+request.ge
 
 
             window.open("main/index.html", "workareaFrame");
-
+            $("#logoutBtn").click(function () {
+                window.location.href="settings/user/logout.do";
+            });
         });
-
     </script>
 
 </head>
@@ -132,7 +133,7 @@ String basePath=request.getScheme()+"://"+request.getServerName()+":"+request.ge
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
                 <button type="button" class="btn btn-primary" data-dismiss="modal"
-                        onclick="window.location.href='login.html';">确定
+                        id="logoutBtn">确定
                 </button>
             </div>
         </div>
@@ -142,13 +143,13 @@ String basePath=request.getScheme()+"://"+request.getServerName()+":"+request.ge
 <!-- 顶部 -->
 <div id="top" style="height: 50px; background-color: #3C3C3C; width: 100%;">
     <div style="position: absolute; top: 5px; left: 0px; font-size: 30px; font-weight: 400; color: white; font-family: 'times new roman'">
-        CRM &nbsp;<span style="font-size: 12px;">&copy;2019&nbsp;动力节点</span></div>
+        CRM &nbsp;<span style="font-size: 12px;">李兴源</span></div>
     <div style="position: absolute; top: 15px; right: 15px;">
         <ul>
             <li class="dropdown user-dropdown">
                 <a href="javascript:void(0)" style="text-decoration: none; color: white;" class="dropdown-toggle"
                    data-toggle="dropdown">
-                    <span class="glyphicon glyphicon-user"></span> zhangsan <span class="caret"></span>
+                    <span class="glyphicon glyphicon-user"></span> ${sessionScope.sessionUser.name} <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="../settings/index.html"><span class="glyphicon glyphicon-wrench"></span> 系统设置</a></li>
